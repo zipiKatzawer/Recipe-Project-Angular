@@ -1,0 +1,30 @@
+<div class="formLogin">
+<form  [formGroup]="addForm" >
+    <div>
+        <mat-form-field >
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="username">
+          </mat-form-field>
+
+        <!-- <ng-container *ngIf="addForm.controls['username'].errors as nameError">
+            <p *ngIf="nameError['required']">This field is required!</p>
+            <p *ngIf="nameError['minlength']">This field must have at least 3 characters</p>
+        </ng-container> -->
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        <ng-container *ngIf="addForm.controls['password'].errors as passwordError">
+            <!-- <p *ngIf="passwordError['required']">This field is required!</p> -->
+            <p *ngIf="passwordError['minlength']">This field must have at least 6 characters</p>
+        </ng-container>
+    </div>
+    <button (click)="login()" [disabled]="!addForm.valid">Login</button>
+    
+</form>
+</div>

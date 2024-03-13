@@ -1,0 +1,9 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .mat-toolbar {
+    background-color:black; /* שינוי צבע הרקע לשחור */
+    opacity: 0.8; /* שינוי שקיפות */
+    color: white;
+    height: 80px;
+  }

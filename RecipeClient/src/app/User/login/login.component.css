@@ -1,0 +1,34 @@
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-right-align {
+    text-align: right;
+    
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+    
+  }
+  
+  /* input.example-right-align {
+    -moz-appearance: textfield;
+  } */
+  .formLogin {
+    display: grid;
+    place-items: center;
+    height: 100vh; /* אם ברצונך שהתוכן ייהיה במרכז גם ביחס לרוחב */
+  }
+  
+  mat-form-field {
+    width: 100%; /* שינוי הרוחב כך שיהיה תואם לרוחב של הגודל המוצג */
+  }
+  
+  /* עיצוב נוסף אם נדרש */
+  input.mat-input-element {
+    padding: 8px 12px;
+    margin: 0;
+    box-sizing: border-box;
+  }

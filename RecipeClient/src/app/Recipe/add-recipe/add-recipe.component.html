@@ -1,0 +1,51 @@
+<h1>הוספת מתכון חדש</h1>
+
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+  <label for="recipeName">שם המתכון:</label>
+  <input type="text" id="recipeName" formControlName="recipeName">
+<br>
+  <label for="category">קטגוריה:</label>
+<select id="category" formControlName="category">
+  <option value="">בחר קטגוריה</option>
+  <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+</select>
+
+<br>
+  <label for="preparationTime">זמן הכנה (דקות):</label>
+  <input type="number" id="preparationTime" formControlName="preparationTime">
+<br>
+  <label for="difficultyLevel">קטגוריה:</label>
+  <select id="difficultyLevel" formControlName="difficultyLevel">
+    <option value="">בחר רמת קושי</option>
+    <option value="1">קל מאד</option>
+    <option value="2">קל</option>
+    <option value="3">בינוני</option>
+    <option value="4">קשה</option>
+    <option value="5">קשה מאד</option>
+  </select>
+<br>
+ 
+<h3>מרכיבים</h3>
+<div formArrayName="ingredients">
+  <div *ngFor="let item of ingredients.controls; let i = index" [formGroupName]="i">
+    <input type="text" formControlName="ingredient">
+    <button type="button" (click)="removeIngredient(i)">X</button>
+  </div>
+</div>
+<button type="button" (click)="addIngredient()">הוסף מרכיב</button>
+
+<h3>הוראות הכנה</h3>
+<div formArrayName="instructions">
+  <div *ngFor="let item of instructions.controls; let i = index" [formGroupName]="i">
+    <input type="text" formControlName="instruction">
+    <button type="button" (click)="removeInstruction(i)">X</button>
+  </div>
+</div>
+<button type="button" (click)="addInstruction()">הוסף הוראה</button>
+<br>
+  <button type="submit">שמור מתכון</button>
+</form>
+
+<!-- <div *ngIf="successMessage">
+  {{ successMessage }}
+</div> -->

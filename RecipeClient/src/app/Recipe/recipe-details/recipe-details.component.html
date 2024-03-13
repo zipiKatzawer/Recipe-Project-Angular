@@ -1,0 +1,20 @@
+<p>recipe-details works!</p>
+<div *ngIf="recipe">
+    <h2>{{ recipe.name }}</h2>
+    <p>קטגוריה: {{ recipe.categoryId }}</p>
+    <p>דרגת קושי: {{ recipe.level }}</p>
+    <img [src]="recipe.imageRoute" alt="תמונת המתכון">
+    <h3>רכיבים</h3>
+    <ul>
+      <li *ngFor="let ingredient of recipe.ingredients">
+        <i class="fa fa-check"></i> {{ ingredient }}
+      </li>
+    </ul>
+    <h3>אופן ההכנה</h3>
+    <ol>
+      <li *ngFor="let step of recipe.preparation">{{ step }}</li>
+    </ol>
+      <button *ngIf="isCurrentUserRecipe" (click)="deleteRecipe()">Delete</button>
+
+  </div>
+  

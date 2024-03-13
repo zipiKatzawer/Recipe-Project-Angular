@@ -1,0 +1,38 @@
+<h1>הרשמה</h1>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>שם משתמש</mat-label>
+    <input matInput type="text" formControlName="name" id="name">
+    <mat-error [hidden]="!formSubmitted || !registerForm.get('name')?.hasError('required')">שדה חובה</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>אימייל</mat-label>
+    <input matInput type="email" formControlName="email" id="email">
+    <mat-error [hidden]="!formSubmitted || !registerForm.get('email')?.hasError('required')">שדה חובה</mat-error>
+    <mat-error [hidden]="!formSubmitted || !registerForm.get('email')?.hasError('email')">כתובת אימייל לא תקינה</mat-error>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>סיסמה</mat-label>
+    <input matInput type="password" formControlName="password" id="password">
+    <mat-error [hidden]="!formSubmitted || !registerForm.get('password')?.hasError('required')">שדה חובה</mat-error>
+    <mat-error [hidden]="!formSubmitted || !registerForm.get('password')?.hasError('minlength')">הסיסמה חייבת להכיל לפחות 6 תווים</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>אימות סיסמה</mat-label>
+    <input matInput type="password" formControlName="confirmPassword" id="confirmPassword">
+    <mat-error [hidden]="!formSubmitted || !registerForm.get('confirmPassword')?.hasError('required')">שדה חובה</mat-error>
+    <mat-error [hidden]="!formSubmitted || !registerForm.get('confirmPassword')?.hasError('passwordMismatch')">הסיסמאות אינן תואמות</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>כתובת</mat-label>
+    <input matInput type="text" formControlName="address" id="address">
+    <mat-error [hidden]="!formSubmitted || !registerForm.get('address')?.hasError('required')">שדה חובה</mat-error>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button type="submit">הרשם</button>
+</form>
