@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../User/user.service';
 
 @Component({
   selector: 'app-recipe-details',
-  // standalone: true,
-  // imports: [],
   templateUrl: './recipe-details.component.html',
   styleUrl: './recipe-details.component.css'
 })
 export class RecipeDetailsComponent implements OnInit {
   recipe!: Recipe;
-  // currentUser!: number; // הנוכחי מחובר
   isCurrentUserRecipe: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private _recipeService: RecipeService,private _userService: UserService) { }

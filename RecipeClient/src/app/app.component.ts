@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from './User/login/login.component';
-import { AddRecipeComponent } from './Recipe/add-recipe/add-recipe.component';
-import { RegisterComponent } from './User/register/register.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,TopBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

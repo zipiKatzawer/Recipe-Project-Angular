@@ -4,8 +4,6 @@ import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-all-recipes',
-  // standalone: true,
-  // imports: [],
   templateUrl: './all-recipes.component.html',
   styleUrl: './all-recipes.component.css'
 })
@@ -15,13 +13,6 @@ export class AllRecipesComponent implements OnInit{
   
   ngOnInit() {
     this.getRecipes();
-    // const currentUserString = sessionStorage.getItem('currentUser');
-    //     if (currentUserString !== null) {
-    //       const currentUser = JSON.parse(currentUserString);
-    //       console.log('sessionStorage username:', currentUser.username);
-    //     } else {
-    //       console.log('No user data in sessionStorage');
-    //     }
   }
 
   getRecipes() {

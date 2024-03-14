@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
-import { CommonModule } from '@angular/common';
 import { Category } from '../../Category/category.model';
 import { CategoryService } from '../../Category/category.service';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-recipe',

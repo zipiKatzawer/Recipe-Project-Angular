@@ -3,7 +3,13 @@
   }
   .mat-toolbar {
     background-color:black; /* שינוי צבע הרקע לשחור */
-    opacity: 0.8; /* שינוי שקיפות */
+    opacity: 0.9; /* שינוי שקיפות */
     color: white;
     height: 80px;
+  }
+  mat-icon{
+    position: absolute;
+  top: 30px;
+  right:40px;
+  font-size: 27px;
   }

@@ -24,8 +24,7 @@
     <option value="5">קשה מאד</option>
   </select>
 <br>
- 
-<h3>מרכיבים</h3>
+ <h3>מרכיבים</h3>
 <div formArrayName="ingredients">
   <div *ngFor="let item of ingredients.controls; let i = index" [formGroupName]="i">
     <input type="text" formControlName="ingredient">

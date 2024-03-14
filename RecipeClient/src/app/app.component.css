@@ -1,0 +1,7 @@
+#homePage {
+    background-image: url('../assets/images/DSC_0405-Edit.jpg');
+    background-size: cover;
+    background-position-x: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+  }

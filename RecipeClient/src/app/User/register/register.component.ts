@@ -1,11 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RecipeService } from '../../Recipe/recipe.service';
-import { User } from '../user.modle';
-import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+
+import { User } from '../user.modle';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-register',

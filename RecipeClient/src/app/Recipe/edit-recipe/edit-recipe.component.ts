@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
-import Swal from 'sweetalert2';
-import { FormArray, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-recipe',
@@ -15,40 +15,14 @@ import { FormArray, FormBuilder } from '@angular/forms';
 export class EditRecipeComponent {
   recipe!: Recipe; // define the Recipe model appropriately
   selectedDate!: Date;
-  // ingredientsFormArray!: FormArray;
-  // instructionsFormArray!: FormArray;
-  // fb: FormBuilder = new FormBuilder();
-  // ingredients: string[] = [];
-  // instructions: string[] = [];
   constructor(private route: ActivatedRoute,private router: Router, private recipeService: RecipeService) { }
 
   ngOnInit(): void {
     const recipeId = this.route.snapshot.params['id'];
     this.recipeService.getRecipeById(recipeId).subscribe((recipe: Recipe) => {
       this.recipe = recipe;
-      // this.initFormArrays();
     });
   }
-  // initFormArrays() {
-  //   this.ingredientsFormArray = this.fb.array([]);
-  //   this.instructionsFormArray = this.fb.array([]);
-  //   // Initialize ingredients and instructions form arrays here
-  // }
-  // addIngredient() {
-  //   this.ingredientsFormArray.push(this.fb.group({ ingredient: '' }));
-  // }
-
-  // removeIngredient(index: number) {
-  //   this.ingredientsFormArray.removeAt(index);
-  // }
-
-  // addInstruction() {
-  //   this.instructionsFormArray.push(this.fb.group({ instruction: '' }));
-  // }
-
-  // removeInstruction(index: number) {
-  //   this.instructionsFormArray.removeAt(index);
-  // }
   saveChanges(): void {
     Swal.fire({
       title: 'Are you sure?',

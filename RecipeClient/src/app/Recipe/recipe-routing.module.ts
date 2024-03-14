@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { RouterModule, Routes } from '@angular/router';
+
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { AllRecipesComponent } from './all-recipes/all-recipes.component';
 import { SmallRecipeComponent } from './small-recipe/small-recipe.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';

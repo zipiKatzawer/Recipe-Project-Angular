@@ -1,16 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Recipe } from '../recipe.model';
 import { Router } from '@angular/router';
+
+import Swal from 'sweetalert2';
+
+import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 import { UserService } from '../../User/user.service';
-import { User } from '../../User/user.modle';
-import Swal from 'sweetalert2';
 
 
 @Component({
   selector: 'app-small-recipe',
-  // standalone: true,
-  // imports: [],
   templateUrl: './small-recipe.component.html',
   styleUrl: './small-recipe.component.css'
 })

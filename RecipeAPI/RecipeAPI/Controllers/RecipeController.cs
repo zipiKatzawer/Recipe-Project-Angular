@@ -12,32 +12,6 @@ namespace RecipeAPI.Controllers
     public class RecipeController : ControllerBase
     {
         public static List<Recipes> recipeList = new List<Recipes>{
-//        new Recipes
-//{
-//    RecipeId = 2,
-//    Name = "Chocolate and Coffee Cake",
-//    CategoryId = 3,
-//    Time = 45,
-//    Level = 2,
-//    AddRecipe = DateTime.Now.AddDays(-1),
-//    Ingredients = new string[] { "3 cups flour", "2 cups sugar", "1 1/2 cups cocoa powder", "2 tablespoons brown sugar", "2 tablespoons baking powder", "1 teaspoon cinnamon", "1 teaspoon cayenne pepper", "2 cups sunflower oil", "1 cup warm water", "1 cup milk", "2 eggs", "1 tablespoon vanilla extract", "1/2 teaspoon salt" },
-//    Preparation = new string[] { "Grease a 24 cm diameter baking pan with oil", "Dust the pan with flour and sprinkle it evenly", "Whisk the eggs with the sugar in a mixer for five minutes until a light foam is obtained", "Add the remaining ingredients and continue to whisk for another five minutes", "Pour the batter into the pan", "Bake in a preheated oven for 45 minutes at 180 degrees Celsius" },
-//    UserId = 2,
-//    ImageRoute = "https://www.regamatok-elite.co.il/wp-content/uploads/2021/05/%D7%A9%D7%9C%D7%91%D7%99%D7%9D-2.jpg"
-//},
-//        new Recipes
-//    {
-//        RecipeId = 3,
-//        Name = "Classic Cheesecake",
-//        CategoryId = 3,
-//        Time = 90,
-//        Level = 3,
-//        AddRecipe = DateTime.Now.AddDays(-3),
-//        Ingredients = new string[] { "500 grams cream cheese", "200 grams sugar", "3 eggs", "1/2 cup milk", "1/4 cup flour", "1 tablespoon lemon zest", "1 teaspoon vanilla extract", "200 grams graham cracker crumbs" },
-//        Preparation = new string[] { "Mix the cream cheese with the sugar in a food processor", "Add the eggs and milk and continue to blend in the food processor", "Add the flour, lemon zest, and vanilla extract and continue to blend until smooth", "Pour the mixture into a lined baking dish", "Bake in a preheated oven at 180 degrees Celsius for twenty minutes", "Remove the cake from the oven and let it cool to room temperature", "Sprinkle the crumbs on top of the cake", "Return to the oven for twenty more minutes", "Chill for at least eight hours in the refrigerator", "Serve and enjoy" },
-//        UserId = 3,
-//        ImageRoute = "https://hips.hearstapps.com/hmg-prod/images/211014-delish-seo-cheesecake-factory-cheesecake-horizontal-050-eb-1635810498.jpg?crop=0.8889702293801854xw:1xh;center,top&resize=1200:*"
-//    },
         new Recipes
         {
             RecipeId= 1,
@@ -97,7 +71,7 @@ namespace RecipeAPI.Controllers
              "Melt the milk jam or the chocolate together with a drop of milk jam",
              "When the cake has cooled, pour slowly over the cake",
              "With an appetite!"},
-            UserId= 1,
+            UserId=2,
             ImageRoute="https://happykitchen.co.il/wp-content/uploads/2020/05/עוגת-גבינה-פרורים-פרוסה.jpg",
         },
                   new Recipes
@@ -114,16 +88,16 @@ namespace RecipeAPI.Controllers
             Preparation=new string[]{ "Put the watermelon cubes in a sealed bag and freeze.",
              "Place the frozen watermelon cubes and orange juice in a food processor and grind until a soft sorbet texture (between hail and ice cream).",
              "Taste. If sweetness is lacking, add powdered sugar to taste and mix well." },
-            UserId= 1,
+            UserId= 3,
             ImageRoute="https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2023/08/03112310/shutterstock_108717344-Large.jpg",
         },
                         new Recipes
         {
             RecipeId= 5,
-            Name= "Skewers in the oven with a homely taste",
+            Name= "Skewers in the oven",
             CategoryId=1,
             Time= 60,
-            Level = 1,
+            Level = 2,
             AddRecipe = DateTime.Now.AddDays(-3),
             Ingredients=new string[] {"1/2 kilo of meat",
     "1 handful of cilantro",
@@ -141,7 +115,7 @@ namespace RecipeAPI.Controllers
              "Place in a mold, cover with aluminum foil",
              "Bake in a heated oven at 180 for 20 minutes on turbo",
              "With an appetite!" },
-            UserId= 1,
+            UserId= 3,
             ImageRoute="https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2021/09/22192230/WhatsApp-Image-2021-09-19-at-15.33.02.jpeg",
         },
                               new Recipes
@@ -255,7 +229,7 @@ namespace RecipeAPI.Controllers
             Preparation=new string[]{ "Put the watermelon cubes in a sealed bag and freeze.",
              "Place the frozen watermelon cubes and orange juice in a food processor and grind until a soft sorbet texture (between hail and ice cream).",
              "Taste. If sweetness is lacking, add powdered sugar to taste and mix well."},
-            UserId= 1,
+            UserId= 2,
             ImageRoute="https://eytans.co/wp-content/uploads/2021/02/25409.jpg",
         },
                                             new Recipes
@@ -283,7 +257,7 @@ namespace RecipeAPI.Controllers
              "Place in a mold, cover with aluminum foil",
              "Bake in a heated oven at 180 for 20 minutes on turbo",
              "With an appetite!" },
-            UserId= 1,
+            UserId= 2,
             ImageRoute="https://cdn.baligam.co.il/_media/media/31053/281207.jpg",
         }, new Recipes
         {
@@ -316,7 +290,7 @@ namespace RecipeAPI.Controllers
              "sprinkle like in the picture",
              "Decorate to the best of your imagination",
              "With an appetite!"},
-            UserId= 1,
+            UserId=3,
             ImageRoute="https://www.yehudit-aviv.co.il/wp-content/uploads/DSC_0011-%D7%A2%D7%A8%D7%95%D7%9A-42.jpg"
         },
 

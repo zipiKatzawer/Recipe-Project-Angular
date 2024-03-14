@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeService } from '../../Recipe/recipe.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-login',
