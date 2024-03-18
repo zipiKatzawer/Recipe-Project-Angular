@@ -1,59 +1,61 @@
 <!-- edit-recipe.component.html -->
-<div *ngIf="recipe">
-<form (ngSubmit)="saveChanges()" #recipeForm="ngForm">
-    <label for="name">Name:</label>
+<div id="edit">
+<div  class="card flex justify-content-center">
+  
+  <p-dialog [(visible)]="dialogVisible" [style]="{ 'width': '50vw', 'background-color': 'white'}">
+
+      <div *ngIf="recipe" id="edit">
+  <form (ngSubmit)="saveChanges()" #recipeForm="ngForm">
+      <label for="name">Name:</label>
+      <br>
+      <input type="text" id="name" name="name" [(ngModel)]="recipe.name" required>
     <br>
-    <input type="text" id="name" name="name" [(ngModel)]="recipe.name" required>
-  <br>
-    <label for="category">Category:</label>
+      <label for="category">Category:</label>
+      <br>
+      <select id="category" name="categoryId" [(ngModel)]="recipe.categoryId" required>
+          <option value="" disabled>בחר קטגוריה</option>
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      </select>
+      <br>
+      <label for="preparationTime">זמן הכנה (דקות):</label>
+      <br>
+      <input type="number" id="preparationTime" name="time" [(ngModel)]="recipe.time" >
     <br>
-    <select id="category" name="categoryId" [(ngModel)]="recipe.categoryId" required>
-        <option value="">בחר קטגוריה</option>
-        <!-- <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option> -->
-      <!-- options for categories -->
+    <label for="difficultyLevel">level:</label>
+    <br>
+    <select id="difficultyLevel" name="level"[(ngModel)]="recipe.level">
+      <option value="">בחר רמת קושי</option>
+      <option value="1">קל מאד</option>
+      <option value="2">קל</option>
+      <option value="3">בינוני</option>
+      <option value="4">קשה</option>
+      <option value="5">קשה מאד</option>
     </select>
-    <br>
-    <label for="preparationTime">זמן הכנה (דקות):</label>
-    <br>
-    <input type="number" id="preparationTime" name="time" [(ngModel)]="recipe.time" >
   <br>
-  <label for="difficultyLevel">level:</label>
+  <label for="addRecipe">תאריך הוספת מתכון:</label>
   <br>
-  <select id="difficultyLevel" name="level"[(ngModel)]="recipe.level">
-    <option value="">בחר רמת קושי</option>
-    <option value="1">קל מאד</option>
-    <option value="2">קל</option>
-    <option value="3">בינוני</option>
-    <option value="4">קשה</option>
-    <option value="5">קשה מאד</option>
-  </select>
-<br>
-<label for="addRecipe">תאריך הוספת מתכון:</label>
-<br>
-<input type="text" id="addRecipe" name="addRecipe" [(ngModel)]="recipe.addRecipe">
-<br>
-<h3>רכיבים:</h3>
-<div *ngFor="let ingredient of recipe.ingredients; let i = index">
-    <label for="ingredient{{i}}">מרכיב {{i+1}}:</label>
-    <input id="ingredient{{i}}" name="ingredient{{i}}" [(ngModel)]="recipe.ingredients[i]">
-    <!-- <button type="button" (click)="removeIngredient(i)">X</button> -->
-    <br>
+  <input type="text" id="addRecipe" name="addRecipe" [(ngModel)]="recipe.addRecipe">
+  <br>
+  <h1>רכיבים:</h1>
+  <div *ngFor="let ingredient of recipe.ingredients; let i = index">
+      <label for="ingredient{{i}}">מרכיב {{i+1}}:</label>
+      <input id="ingredient{{i}}" name="ingredient{{i}}" [(ngModel)]="recipe.ingredients[i]">
+      <br>
+    </div>
+  <h1>הוראות:</h1>
+    <div *ngFor="let instruction of recipe.preparation; let j = index">
+      <label for="instruction{{j}}">הוראה {{j+1}}:</label>
+      <input id="instruction{{j}}" name="instruction{{j}}" [(ngModel)]="recipe.preparation[j]">
+      <br>
+    </div>
+  <label for="imageRoute">כתובת תמונה:</label>
+  <br>
+  <input type="text" id="imageRoute" name="imageRoute" [(ngModel)]="recipe.imageRoute">
+  <br>
+      <button type="submit">Save Changes</button>
+      <br>
+    </form>
   </div>
-  <!-- <button type="button" (click)="addIngredient()">הוסף מרכיב</button> -->
-<h3>הוראות:</h3>
-  <div *ngFor="let instruction of recipe.preparation; let j = index">
-    <label for="instruction{{j}}">הוראה {{j+1}}:</label>
-    <input id="instruction{{j}}" name="instruction{{j}}" [(ngModel)]="recipe.preparation[j]">
-    <!-- <button type="button" (click)="removeInstruction(i)">X</button> -->
-    <br>
-  </div>
-  <!-- <button type="button" (click)="addInstruction()">הוסף הוראה</button> -->
-<label for="imageRoute">כתובת תמונה:</label>
-<br>
-<input type="text" id="imageRoute" name="imageRoute" [(ngModel)]="recipe.imageRoute">
-<br>
-    <button type="submit">Save Changes</button>
-    <br>
-    <!-- <button type="button" (click)="cancelChanges()">Cancel</button> -->
-  </form>
+  </p-dialog>
+</div>
 </div>

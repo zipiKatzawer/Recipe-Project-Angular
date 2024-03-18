@@ -1,20 +1,28 @@
-<p>recipe-details works!</p>
-<div *ngIf="recipe">
-    <h2>{{ recipe.name }}</h2>
-    <p>קטגוריה: {{ recipe.categoryId }}</p>
-    <p>דרגת קושי: {{ recipe.level }}</p>
-    <img [src]="recipe.imageRoute" alt="תמונת המתכון">
-    <h3>רכיבים</h3>
-    <ul>
-      <li *ngFor="let ingredient of recipe.ingredients">
-        <i class="fa fa-check"></i> {{ ingredient }}
-      </li>
-    </ul>
-    <h3>אופן ההכנה</h3>
-    <ol>
-      <li *ngFor="let step of recipe.preparation">{{ step }}</li>
-    </ol>
-      <button *ngIf="isCurrentUserRecipe" (click)="deleteRecipe()">Delete</button>
+  <div *ngIf="recipe" id="details">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <!-- <div mat-card-avatar class="example-header-image" [style.background-image]="'url(' + category.routeToIcon + ')'"></div> -->
 
-  </div>
-  
+      <mat-card-title>{{ recipe.name }}</mat-card-title>
+      <mat-card-subtitle>קטגוריה: {{ recipe.categoryId }} דרגת קושי: {{ recipe.level }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{recipe.imageRoute}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <h2>Ingredients:</h2>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">
+          <i class="fa fa-check"></i> {{ ingredient }}
+        </li>
+      </ul>
+      <h2>Instructions:</h2>
+      <ol>
+        <li *ngFor="let step of recipe.preparation">{{ step }}</li>
+      </ol>
+    </mat-card-content>
+    <mat-card-actions>
+      <button  mat-button *ngIf="isCurrentUserRecipe" (click)="deleteRecipe()">DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+ 

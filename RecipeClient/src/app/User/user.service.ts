@@ -22,4 +22,8 @@ export class UserService {
   getUserById(userId: number): Observable<User> {
     return this._http.get<User>('https://localhost:7130/api/User/' + userId);
   }
+  getAllUsers()
+  {
+    return this._http.get<User[]>('https://localhost:7130/api/User/AllUsers');
+  }
 }

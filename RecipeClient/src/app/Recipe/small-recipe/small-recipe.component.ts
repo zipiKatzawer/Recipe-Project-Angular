@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 import { UserService } from '../../User/user.service';
+import { EditRecipeComponent } from '../edit-recipe/edit-recipe.component';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class SmallRecipeComponent implements OnInit {
       {
         next: (res:any) => {
           console.log("res", res);
+          if(res!=null){
           this.userName1=res.name
           const currentUserString = sessionStorage.getItem('currentUser');
           if (currentUserString !== null) {
@@ -34,6 +36,7 @@ export class SmallRecipeComponent implements OnInit {
             this.isCurrentUserRecipe = true;
           }
         }
+       }
       }
     );
   }
@@ -69,6 +72,7 @@ export class SmallRecipeComponent implements OnInit {
   }
   navigateToEdit()
   {
+    
     if(this.isCurrentUserRecipe){
     console.log("id", this.recipe.recipeId);
     this.router.navigate(['/recipe/edit-recipe', this.recipe.recipeId]);
@@ -81,5 +85,5 @@ export class SmallRecipeComponent implements OnInit {
       });
     }
   }
- 
+
 }

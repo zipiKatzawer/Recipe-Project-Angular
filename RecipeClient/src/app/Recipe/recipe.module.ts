@@ -14,14 +14,27 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 import { DurationPipe } from './duration.pipe';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DialogModule } from 'primeng/dialog';
 
-
-
+// import {
+//   MatDialog,
+//   MatDialogRef,
+//   MatDialogActions,
+//   MatDialogClose,
+//   MatDialogTitle,
+//   MatDialogContent,
+// } from '@angular/material/dialog';
 @NgModule({
   declarations: [AddRecipeComponent,AllRecipesComponent,SmallRecipeComponent,RecipeDetailsComponent,EditRecipeComponent,DurationPipe],
   imports: [
     ReactiveFormsModule,CommonModule,FormsModule,RecipeRoutingModule,
-    MatCardModule, MatButtonModule,MatIconModule
+    MatCardModule, MatButtonModule,MatIconModule,MatFormFieldModule, MatSelectModule, MatInputModule,
+    // MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent,
+DialogModule
+    
     
   ]
 })

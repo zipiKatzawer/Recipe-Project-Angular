@@ -1,0 +1,16 @@
+#details{
+    /* color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* או גובה מבוסס על התוכן */
+}
+/* .example-header-image{
+  background-size:100px;
+} */
+.example-card {
+    max-width: 600px;
+  }
+  li{
+    text-align: left;
+  }

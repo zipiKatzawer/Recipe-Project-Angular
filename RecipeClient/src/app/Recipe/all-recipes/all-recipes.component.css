@@ -5,3 +5,9 @@
 .allRecipe{
     background-color: rgba(255, 255, 255, 0.5); ;
 }
+mat-form-field{
+    margin-left: 10px;
+}
+form{
+    text-align: left;
+}

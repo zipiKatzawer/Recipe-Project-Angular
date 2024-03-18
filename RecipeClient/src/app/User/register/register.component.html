@@ -1,8 +1,9 @@
-<h1>הרשמה</h1>
+<!-- <h1>הרשמה</h1> -->
+<br>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="fill">
     <mat-label>שם משתמש</mat-label>
-    <input matInput type="text" formControlName="name" id="name">
+    <input matInput type="text" formControlName="name" id="name" placeholder="{{userName1}}">
     <mat-error [hidden]="!formSubmitted || !registerForm.get('name')?.hasError('required')">שדה חובה</mat-error>
   </mat-form-field>
   <br>

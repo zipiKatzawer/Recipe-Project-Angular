@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   userExists = false;
   registrationFailed = false;
-
+userName1!:string
   constructor(private router: Router,private fb: FormBuilder, private _userService: UserService) { }
 
   ngOnInit() {
@@ -28,6 +28,12 @@ export class RegisterComponent implements OnInit {
       confirmPassword: ['', Validators.required],
       address: ['', Validators.required]
     }, { validator: this.checkPasswords });
+    
+    const currentUserString = sessionStorage.getItem('currentUser');
+    if (currentUserString !== null) {
+      const currentUser = JSON.parse(currentUserString);
+      this.userName1=currentUser.username
+      }
   }
   checkPasswords(group: FormGroup) { 
     const pass = group.get('password')?.value;
